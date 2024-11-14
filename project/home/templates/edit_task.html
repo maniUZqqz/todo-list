@@ -1,0 +1,28 @@
+{% extends 'base project/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    edit
+{% endblock %}
+
+
+{% block link %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App with Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+
+
+{% block body %}
+<h2>Edit Task</h2>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
+

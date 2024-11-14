@@ -1,0 +1,32 @@
+{% extends 'base project/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    edit
+{% endblock %}
+
+
+{% block link %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App with Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+    <h2>Are you sure you want to delete this task?</h2>
+<p>{{ task.title }}</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Yes, delete</button>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+
+
+
+{% endblock %}

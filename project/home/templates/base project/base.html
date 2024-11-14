@@ -1,0 +1,26 @@
+{% load static %}
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block link %}{% endblock %}
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+
+</head>
+<body>
+{% render_partial 'home.views.header' %}
+{% block body %}
+
+{% endblock %}
+{% render_partial 'home.views.footer' %}
+</body>
+</html>
